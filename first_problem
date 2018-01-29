@@ -1,0 +1,12 @@
+@author is.saarah()
+
+# Code to compute sum of all multiples of 3 or 5 that are below n.
+
+def first_problem(n):
+    count = 0
+    for num in range(n):
+        if num % 3 == 0 or num % 5 == 0:
+            count += num
+        else:
+            pass
+    return count
