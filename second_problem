@@ -1,0 +1,17 @@
+@author is.saarah()
+
+
+#Code to compute the sum of even terms of a Fibbonaci sequence where the last term does not exceed 4,000,000.
+
+
+def fib():
+    first = 0
+    second = 1
+    sum_of_terms = 0
+    while second < 4000000:
+        if second % 2 == 0:
+            sum_of_terms += second
+        next_term = first + second
+        first = second
+        second = next_term
+    return sum_of_terms
