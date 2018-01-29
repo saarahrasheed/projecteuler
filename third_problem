@@ -1,0 +1,20 @@
+@author is.saarah()
+
+#Code to compute the largest prime factor of a number
+
+def fourth_problem(n):
+    divisors = [num for num in range(1, n) if n % num == 0]
+    primes = [num for num in range(1, n) if prime_or_not(num) == 'Prime']
+    max_prime = max(primes)
+    return divisors, primes, max_prime
+
+
+def prime_or_not(n):
+    divs = [i for i in range(1, n) if n % i == 0]
+    if len(divs) > 1:
+        answer = 'Composite'
+    else:
+        answer = 'Prime'
+    return answer
+
+#Code may be inefficient given the required number is 600851475143 
