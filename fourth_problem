@@ -1,6 +1,6 @@
 @author is.saarah()
 
-#Code to compute largest palindrome formed by two n-digit numbers.
+#Code to compute largest palindrome formed by two three-digit numbers.
 
 def fourth_problem(digit_length):
     """Palindrome"""
