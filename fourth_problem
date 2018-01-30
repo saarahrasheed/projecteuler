@@ -1,0 +1,55 @@
+@author is.saarah()
+
+#Code to compute largest palindrome formed by two n-digit numbers.
+
+def fourth_problem(digit_length):
+    """Palindrome"""
+    start, end = set_limit(digit_length)
+    palindrome = []
+    for i in range(start, end):
+        for j in range(start, end):
+            term = str(i*j)
+            length = len(term)
+            cut_off = round(length/2)
+            if length == 6:
+                front = term[:cut_off]
+                back = term[cut_off:]
+                if front == swap(back):
+                    palindrome.append(int(term))
+                    print("{} x {} = {}".format(i, j, i*j))
+                else:
+                    continue
+            elif len(term) == 5:
+                front = term[:cut_off]
+                back = term[-cut_off:]
+                if front == swap(back):
+                    palindrome.append(int(term))
+                    print("{} x {} = {}".format(i, j, i*j))
+                else:
+                    continue
+            else:
+                print("No palindrome found.")
+    max_pal = max(palindrome)
+    return max_pal
+
+
+def swap(ls):
+    assert isinstance(ls, (list, str)), "Please provide a valid string list"
+    if len(ls) == 2:
+        a = ls[0]
+        b = ls[1]
+        return b+a
+    elif len(ls) == 3:
+        a = ls[0]
+        b = ls[1]
+        c = ls[2]
+        return c+b+a
+    else:
+        print("What the hell. I got {}".format(ls))
+    return None
+
+
+def set_limit(n):
+    start = pow(10, n-1)
+    end = pow(10, n) - 1
+    return start, end
