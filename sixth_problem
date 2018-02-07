@@ -4,6 +4,12 @@
 # (1 + 2 + ... n)^p - (1^p + 2^p ... n^p) 
 # A - B 
 
+def sixth_problem(n, p):
+  sum_sq = sum_ squared(n, p)
+  sq_sum = square_sum(n, p)
+  value = sum_sq - sq_sum
+  return value
+
 # A
 def sum_squared(n, p):
   term = 0
@@ -20,4 +26,3 @@ def square_sum(n, p):
     return term
 
 #For project Euler exercise, n=100, p=2
-sum_ squared(100, 2) - square_sum(100,2)
